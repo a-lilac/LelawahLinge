@@ -80,15 +80,13 @@ public class MyCrawler extends WebCrawler{
 			Document document =  Jsoup.parseBodyFragment(html);
 			title = document.title();
 			Element article = document.select("article").first();
-			Elements imageEl = article.select("img[alt]"); // image in article
-			String image = imageEl.attr("alt"); 
-			String imageSource = imageEl.attr("src"); // source to image in article
-
+			Elements imageEls = article.select("img[alt]"); // image in article
+			/**
+			 * Percabangan ini digunakan untuk memparsing document html/ news dari situs Lintas Gayo
+			 */
 			if(url.contains("lintasgayo")){
-				//file = crawlStorageFolder+"/lintasgayo/lintasgayo.txt";
-				
-				// tangani konten yang didapat dari Lintas Gayo
-				
+				file = crawlStorageFolder+"/lintasgayo/lintasgayo.txt";
+								
 				// Judul
 				if(title.endsWith("| Lintas Gayo") || title.endsWith("| Media Online Gayo")){
 					title = title.replace("| Lintas Gayo", "");
@@ -102,10 +100,23 @@ public class MyCrawler extends WebCrawler{
 				
 				// Isi berita
 				content = article.select("p").text().toString();
-				//gambar pada berita
-				//TODO:URL harus diarahkan langsung pada gambar
-				images.put(image.toString(), imageSource.toString());
 				
+				// TODO tanda tanya berlebihan pada konten.
+				//gambar pada berita
+				//Sudah OK
+				for (Element imageEl: imageEls ){
+					String image = imageEl.attr("alt"); 
+					String imageSource = imageEl.attr("src"); // source to image in article
+					images.put(image.toString(), imageSource.toString());
+				}
+				
+				// TODO Periksa jika ada gambar di awal artikel, caption dari gambar keluarkan dari konten dan masukkan ke caption pada gambar yang ditemuka
+				
+				
+				
+			/**
+			 * Percabangan untuk memparsing dokumen html/ news yang diperoleh dari Leuser Antara
+			 */
 			}else if(url.contains("leuserantara") && title != null){
 				file = crawlStorageFolder+"/leuserantara/leuserantara.txt";
 				
@@ -120,15 +131,17 @@ public class MyCrawler extends WebCrawler{
 			System.out.println(content);
 			System.out.println(images.toString());
 			System.out.println();
-			/*
+			
 			try{
 				fileWriter  = new FileWriter(file, true); //true means appending enabled!!
 				printWriter = new PrintWriter(fileWriter);
 				
 				printWriter.println(title);
+				System.out.println(author);
 				printWriter.println(date);
 				printWriter.println(url);
 				printWriter.println(content);
+				System.out.println(images.toString());
 				printWriter.println();
 				printWriter.println();
 				
@@ -136,9 +149,9 @@ public class MyCrawler extends WebCrawler{
 				System.out.println("Tidak bisa menulis ke file");
 				ioe.printStackTrace();
 			}
-			*/
 		}
-		//printWriter.close();
+		printWriter.close();
+		System.out.println("printWriter ditutup");
 	}
 	/**
 	 * Method ini digunakan untuk memperbaiki/menormalkan content yang diperoleh 

@@ -16,13 +16,13 @@ public class MultiCrawlController {
 	public static void main(String[] args) throws Exception  {
 		
 		String crawlStorageFolder = "/home/xhaa/crawledSites/";
-		int numOfCrawlers = 10;
+		int numOfCrawlers = 20;
 		
 		// extra configs
 		int maxDepthOfCrawling = 5;
-		Integer maxPagesToFetch = 40;
+		Integer maxPagesToFetch = null;
 		int politenessDelay = 0;
-		String userAgentString = "PondokBaru";
+		String userAgentString = "Kute Kering";
 		
 		CrawlConfig config1 = new CrawlConfig();
 		//CrawlConfig config2 = new CrawlConfig();
