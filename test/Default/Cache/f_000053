@@ -1,0 +1,2837 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+<head>
+
+<title>JDO vs JPA for Java on Google App Engine - Stack Overflow</title>
+    <link rel="shortcut icon" href="//cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="//cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com"/>
+    <meta property="og:type" content="website" />    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&a" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="JDO vs JPA for Java on Google App Engine" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I want to develop my project on Google App Engine with Struts2. For the database I have two options JPA and JDO. Will you guys please suggest me on it? Both are new for me and I need to learn them...." />
+    <meta property="og:url" content="http://stackoverflow.com/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine"/>
+    <link rel="canonical" href="http://stackoverflow.com/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine" />
+
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="//cdn.sstatic.net/Js/stub.en.js?v=cb59c9d56db2"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.sstatic.net/Sites/stackoverflow/all.css?v=fa9dc9346d8c">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;JDO vs JPA for Java on Google App Engine&#39;" href="/feeds/question/1418219">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:1418219});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '1418219');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1462636457,"routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"57004ab655327f77d52d174dc17dda44","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"a40885c674f9","js/moderator.en.js":"ba888756f7ac","js/full-anon.en.js":"a5df9f73673c","js/full.en.js":"22860c74fefe","js/wmd.en.js":"2ce10bd13188","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"2c293de7dc9e","js/help.en.js":"a56fdf9b9ff2","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"96f539f3dbb9","js/inline-tag-editing.en.js":"943c7090ea55","js/revisions.en.js":"47de10a8358f","js/review.en.js":"0377b892201c","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"b1451d07b367","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"40c82ff6e650","js/keyboard-shortcuts.en.js":"e28c02e6c0b0","js/external-editor.en.js":"692898ad9a5b","js/external-editor.en.js":"692898ad9a5b","js/snippet-javascript.en.js":"e9b8c51e309a","js/snippet-javascript-codemirror.en.js":"4ef83387517d"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+</head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        <iframe id="adzerk-user-match" width="0" height="0" frameborder="0" scrolling="no" onload="window.AUMIframeDone=true"
+                src="https://ssum-sec.casalemedia.com/usermatch?s=183712&amp;cb=https%3A%2F%2Fengine.adzerk.net%2Fudb%2F22%2Fsync%2Fi.gif%3FpartnerId%3D1%26userId%3D"
+                style="display: none;" marginheight="0" marginwidth="0"></iframe>
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="//stackoverflow.com">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+
+
+
+    <a href="//stackoverflow.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="1"
+       data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com"
+       class="site-link js-gps-track"
+       data-id="552"
+       data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track"
+                       href="//careers.stackoverflow.com?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider"
+                            data-gps-track="site_switcher.click({ item_type:9 })"
+>
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1418219%2fjdo-vs-jpa-for-java-on-google-app-engine%3flq%3d1" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1418219%2fjdo-vs-jpa-for-java-on-google-app-engine%3flq%3d1" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="//stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="//stackexchange.com"
+               class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track"
+               data-gps-track="site_switcher.show"
+               title="A list of all 155 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#"
+       class="topbar-icon icon-inbox yes-hover js-inbox-button"
+       title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#"
+       class="topbar-icon icon-achievements yes-hover js-achievements-button "
+       data-unread-class=""
+       title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1418219%2fjdo-vs-jpa-for-java-on-google-app-engine%3flq%3d1" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1418219%2fjdo-vs-jpa-for-java-on-google-app-engine%3flq%3d1" class="login-link">log in</a>
+
+                        <a href="/tour">tour</a>
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="//meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/" >
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="//cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br/>
+                <br/>Join them; it only takes a minute:<br/>
+            <br/>
+            <a href="/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1418219%2fjdo-vs-jpa-for-java-on-google-app-engine%3flq%3d1" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine" class="question-hyperlink">JDO vs JPA for Java on Google App Engine</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="1418219"  id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk927461662",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk927461662">
+            </div>    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="1418219">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">78</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>29</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I want to develop my project on Google App Engine with Struts2. For the database I have two options JPA and JDO. Will you guys please suggest me on it? Both are new for me and I need to learn them. So I will be focused on one after your replies.</p>
+
+<p>Thanks.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/google-app-engine" class="post-tag" title="show questions tagged &#39;google-app-engine&#39;" rel="tag"><img src="//i.stack.imgur.com/vobok.png" height="16" width="18" alt="" class="sponsor-tag-img">google-app-engine</a> <a href="/questions/tagged/jpa" class="post-tag" title="show questions tagged &#39;jpa&#39;" rel="tag">jpa</a> <a href="/questions/tagged/jdo" class="post-tag" title="show questions tagged &#39;jdo&#39;" rel="tag">jdo</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/1418219" title="short permalink to this question" class="short-link" id="link-post-1418219">share</a><span class="lsep">|</span><a href="/posts/1418219/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2009-09-13 16:57:37Z" class="relativetime">Sep 13 '09 at 16:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/170238/tahir-akram"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/7b747d2764678accdcb62440d708df0b?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/170238/tahir-akram">Tahir Akram</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,627</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1418219" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-1418219" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								12 Answers
+                                <span style="display:none;" itemprop="answerCount">12</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="/questions/1418219/jdo-vs-jpa-for-java-on-google-app-engine?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="1418281"></a>
+<div id="answer-1418281" class="answer accepted-answer" data-answerid="1418281"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="1418281">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">30</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>JPA is Sun's standard for persistence, JDO is IMHO dying (actually, it's dead but still moving). In other words, JPA seems to be a better investment on the long term. So I guess I'd choose JPA if both were new to me.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/1418281" title="short permalink to this answer" class="short-link" id="link-post-1418281">share</a><span class="lsep">|</span><a href="/posts/1418281/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/1418281/revisions" title="show all edits to this post">edited <span title="2009-09-13 20:01:53Z" class="relativetime">Sep 13 '09 at 20:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-09-13 17:20:09Z" class="relativetime">Sep 13 '09 at 17:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/70604/pascal-thivent"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/dc1a5b5fdba36ae9cdcf6e267f1a86ca?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/70604/pascal-thivent">Pascal Thivent</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 377,809" dir="ltr">378k</span><span title="67 gold badges"><span class="badge1"></span><span class="badgecount">67</span></span><span title="778 silver badges"><span class="badge2"></span><span class="badgecount">778</span></span><span title="965 bronze badges"><span class="badge3"></span><span class="badgecount">965</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1418281" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="6"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-1261804" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 I agree with that opinion.</span>
+                    &ndash;&nbsp;<a href="/users/146347/kle"
+                       title="14,852 reputation"
+                       class="comment-user">KLE</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-13 19:53:02Z" class="relativetime-clean">Sep 13 '09 at 19:53</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266166" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="supernova">45</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">JDO is not dying, and is targetted at a different audience. Please do check your facts. JDO has had JDO 2.1, JDO 2.2 and now JDO 2.3. JDO is datastore independent. JPA is targetted solely for RDBMS. Fact</span>
+                    &ndash;&nbsp;<a href="/users/69258/datanucleus"
+                       title="13,516 reputation"
+                       class="comment-user">DataNucleus</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 16:59:06Z" class="relativetime-clean">Sep 14 '09 at 16:59</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266302" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="hot">16</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Well, I don&#39;t think we can say that JDO adoption is a success, no matter how much versions there are. Open your eyes, JDO could have billions of versions, nobody is using it anyway (and please, don&#39;t tell me JDO will reborn thanks to GAE). Then, if JPA is targeted solely for RDBMS, explain me why we can use this API with Google&#39;s BigTable? Thanks.</span>
+                    &ndash;&nbsp;<a href="/users/70604/pascal-thivent"
+                       title="377,809 reputation"
+                       class="comment-user">Pascal Thivent</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:22:14Z" class="relativetime-clean">Sep 14 '09 at 17:22</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-7557806" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">9</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Guys, if Google chose it, then it&#39;s not dying. They know what they do. By the way, Congrats @DataNucleus. I&#39;ve seen they choose your implementation.</span>
+                    &ndash;&nbsp;<a href="/users/198212/santiagobasulto"
+                       title="5,930 reputation"
+                       class="comment-user">santiagobasulto</a>
+                <span class="comment-date" dir="ltr"><span title="2011-06-22 11:32:35Z" class="relativetime-clean">Jun 22 '11 at 11:32</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8523247" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This a bad answer. JPA is rdbms specific. So, it cannot be used with the massive proliferation of alternative data stores ( the so called NoSQL ) that we have seen in the recent years. At least without making ugly compromises. So, please do not mark &quot;JPA is daed&quot; as the correct answer</span>
+                    &ndash;&nbsp;<a href="/users/479805/smartnut007"
+                       title="2,391 reputation"
+                       class="comment-user">smartnut007</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-18 21:16:52Z" class="relativetime-clean">Aug 18 '11 at 21:16</span></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-1418281" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>6</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1714755385",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1714755385">
+            </div>
+  
+<a name="1422769"></a>
+<div id="answer-1422769" class="answer" data-answerid="1422769"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="1422769">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">30</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The GAE/J google group has several posts about this very thing. I'd do a search on there and look at people's opinions. You will get a very different message to the opinions expressed above. Also focus on the fact that BigTable is not an RDBMS. Use the right tool for the job</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/1422769" title="short permalink to this answer" class="short-link" id="link-post-1422769">share</a><span class="lsep">|</span><a href="/posts/1422769/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-09-14 17:01:08Z" class="relativetime">Sep 14 '09 at 17:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/69258/datanucleus"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/83a4299ff524a73be142de26c6876576?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/69258/datanucleus">DataNucleus</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 13,516" dir="ltr">13.5k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1422769" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="2"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-1266258" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Why does the Google App Engine supports JPA for its BigTable datastore using the datanucleus-appengine plugin (quoting <a href="http://www.datanucleus.org/products/accessplatform/appengine/support.html" rel="nofollow">datanucleus.org/products/accessplatform/appengine/support.html</a>) if it&#39;s a total mistake? Can you elaborate on this?</span>
+                    &ndash;&nbsp;<a href="/users/70604/pascal-thivent"
+                       title="377,809 reputation"
+                       class="comment-user">Pascal Thivent</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:15:56Z" class="relativetime-clean">Sep 14 '09 at 17:15</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266315" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="hot">15</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">JPA support on non-RDBMS datastores involves making compromises on the API and query language. Many things don&#39;t fit so aren&#39;t supported since they are RDBMS-specific (significant parts of JPQL for example, or many JPA annotations, etc). Consequently you cannot have full portability across datastores, and so any argument for using JPA on BigTable being a straight copy across for what you&#39;d use for an RDBMS store is false.</span>
+                    &ndash;&nbsp;<a href="/users/69258/datanucleus"
+                       title="13,516 reputation"
+                       class="comment-user">DataNucleus</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:23:52Z" class="relativetime-clean">Sep 14 '09 at 17:23</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266329" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">For JDO on the other hand the query language (JDOQL) has no RDBMS-specific components, and metadata is database neutral on the whole with RDBMS-specific components separated out cleanly. Consequently you do have portability between datastores. The JDO API allows use of a native query language for each datastore where required.</span>
+                    &ndash;&nbsp;<a href="/users/69258/datanucleus"
+                       title="13,516 reputation"
+                       class="comment-user">DataNucleus</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:25:50Z" class="relativetime-clean">Sep 14 '09 at 17:25</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266365" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">8</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I never said that you can use the full JPA API but, to me, this won&#39;t prevent you from reusing your JPA knowledge so it&#39;s just not a valid reason for not using JPA. And BTW, portability accross datastores <b>doesn&#39;t happen in real life</b>.</span>
+                    &ndash;&nbsp;<a href="/users/70604/pascal-thivent"
+                       title="377,809 reputation"
+                       class="comment-user">Pascal Thivent</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:30:46Z" class="relativetime-clean">Sep 14 '09 at 17:30</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1266375" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Whatever I say you&#39;re not going to agree so it is pointless the discussion, nor necessary of bold type. Yes portability across datastores does happen since I&#39;ve got clients doing just that. As always people should decide things for themselves based on their project needs, which is what we say in the DataNucleus docs.  --Andy (DataNucleus)</span>
+                    &ndash;&nbsp;<a href="/users/69258/datanucleus"
+                       title="13,516 reputation"
+                       class="comment-user">DataNucleus</a>
+                <span class="comment-date" dir="ltr"><span title="2009-09-14 17:32:43Z" class="relativetime-clean">Sep 14 '09 at 17:32</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-1422769" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>2</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="1560078"></a>
+<div id="answer-1560078" class="answer" data-answerid="1560078"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="1560078">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">23</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Just saw this comparison between JPA and JDO by DataNucleus themselves:-
+<a href="http://www.datanucleus.org/products/accessplatform_2_1/jdo_jpa_faq.html">http://www.datanucleus.org/products/accessplatform_2_1/jdo_jpa_faq.html</a>
+An eye-opener.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/1560078" title="short permalink to this answer" class="short-link" id="link-post-1560078">share</a><span class="lsep">|</span><a href="/posts/1560078/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/1560078/revisions" title="show all edits to this post">edited <span title="2013-04-06 14:46:01Z" class="relativetime">Apr 6 '13 at 14:46</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/275567/pb2q"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/d0257ee6d5213d2d1064cf7f8fc083e9?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/275567/pb2q">pb2q</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 35,047" dir="ltr">35k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="78 silver badges"><span class="badge2"></span><span class="badgecount">78</span></span><span title="103 bronze badges"><span class="badge3"></span><span class="badgecount">103</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-10-13 12:59:04Z" class="relativetime">Oct 13 '09 at 12:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/165473/vinod"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/b2e82c3c8c0d5b4b155868c7cb12deb2?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/165473/vinod">Vinod</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,550</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1560078" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-1989594" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This Datanucleus&#39; manifesto seems to be very pro-JDO. All their statements seem critical of JPA and defensive of JDO and yet I find using JPA a happier activity than using JDO.</span>
+                    &ndash;&nbsp;<a href="/users/140803/blessed-geek"
+                       title="8,799 reputation"
+                       class="comment-user">Blessed Geek</a>
+                <span class="comment-date" dir="ltr"><span title="2010-01-14 00:38:41Z" class="relativetime-clean">Jan 14 '10 at 0:38</span></span>
+                    <span class="edited-yes" title="this comment was edited 3 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2007383" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">DataNucleus supports both JDO and JPA, and we actually just included most of JPA2 in DN 2.0. We promote both, unlike all other persistence solutions, and let users choose. If you think there are factual errors in any coverage of JDO or JPA we would welcome your input. If part of a political agenda on your behalf then you&#39;re best advised to keep your feelings to yourself</span>
+                    &ndash;&nbsp;<a href="/users/69258/datanucleus"
+                       title="13,516 reputation"
+                       class="comment-user">DataNucleus</a>
+                <span class="comment-date" dir="ltr"><span title="2010-01-16 10:08:38Z" class="relativetime-clean">Jan 16 '10 at 10:08</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2556180" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><a href="http://google.com/trends?q=jdo,+jpa" rel="nofollow">google.com/trends?q=jdo,+jpa</a></span>
+                    &ndash;&nbsp;<a href="/users/4249/matt-b"
+                       title="89,490 reputation"
+                       class="comment-user">matt b</a>
+                <span class="comment-date" dir="ltr"><span title="2010-03-31 15:05:53Z" class="relativetime-clean">Mar 31 '10 at 15:05</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-1560078" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="2156396"></a>
+<div id="answer-2156396" class="answer" data-answerid="2156396"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2156396">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I'm a happy user of JDO. Keep up the good work guys.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2156396" title="short permalink to this answer" class="short-link" id="link-post-2156396">share</a><span class="lsep">|</span><a href="/posts/2156396/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-01-28 17:06:58Z" class="relativetime">Jan 28 '10 at 17:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/261179/manfred"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/2316dbbc5c8da8907c589d45f9cf6614?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/261179/manfred">Manfred</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">139</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2156396" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-20332464" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I am a happy JDO user: it suits me fine once I got used to it. Also, with JDO I have the option of moving away from GAE/J and Google BigTable without completely re-designing my persistent data exchange.</span>
+                    &ndash;&nbsp;<a href="/users/1199311/ian-marshall"
+                       title="670 reputation"
+                       class="comment-user">Ian Marshall</a>
+                <span class="comment-date" dir="ltr"><span title="2013-01-28 20:20:59Z" class="relativetime-clean">Jan 28 '13 at 20:20</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2156396" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="7264829"></a>
+<div id="answer-7264829" class="answer" data-answerid="7264829"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7264829">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>For the record, it is Google App Engine (GAE), so we play with the Google rules not with the Oracle/Sun rules.</p>
+
+<p>Under it, JPA is not suitable for GAE, it is unstable and it does not work as expected. Neither Google is willing to support it but the bare minimum.</p>
+
+<p>And for other part, JDO is quite stable in GAE and it is (in some extend) well documented by Google.</p>
+
+<p>However, Google does not recommend any of them.</p>
+
+<p><a href="http://code.google.com/appengine/docs/java/datastore/overview.html">http://code.google.com/appengine/docs/java/datastore/overview.html</a></p>
+
+<p>Low-level API will give the best performance and GAE is all about performance.</p>
+
+<p><a href="http://gaejava.appspot.com/">http://gaejava.appspot.com/</a></p>
+
+<p>For example, add 10 entity</p>
+
+<blockquote>
+  <p>Python        :68ms</p>
+  
+  <p>JDO           :378ms</p>
+  
+  <p>Java Native   :30ms</p>
+</blockquote>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7264829" title="short permalink to this answer" class="short-link" id="link-post-7264829">share</a><span class="lsep">|</span><a href="/posts/7264829/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-08-31 23:58:49Z" class="relativetime">Aug 31 '11 at 23:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/202705/magallanes"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/JUPEe.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/202705/magallanes">magallanes</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,981</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7264829" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-28449317" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">That&#39;s not the kind of results I get when I run your tests.</span>
+                    &ndash;&nbsp;<a href="/users/521180/code578841441"
+                       title="5,468 reputation"
+                       class="comment-user">code578841441</a>
+                <span class="comment-date" dir="ltr"><span title="2013-10-07 11:05:58Z" class="relativetime-clean">Oct 7 '13 at 11:05</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7264829" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="4953905"></a>
+<div id="answer-4953905" class="answer" data-answerid="4953905"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="4953905">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>People claiming JDO is dead is not without merit. Here is what I read in the book Pro EJB 3 Java Persistence API: "Shortly thereafter Sun announced that JDO would be reduced to specification maintenance mode and that the Java Persistence API would draw from both JDO and the other persistence vendors and become the single supported standard going forward.". The author Mike Keith is the co-specification leader on EJB3. Of course he is a big supporter of JPA, but I doubt he is biased enough to lie. </p>
+
+<p>It is true that when the book was published, most major vendors were united behind JPA rather than JDO, even though JDO does have more advanced technical features than JPA. It is not surprising because big players in the EE world such as IBM/Oracle are also big RDBMS vendors. More customers are using RDMBS than non-RDMBS in their projects. JDO was dying until GAE gave it a big boost. It makes sense because GAE data store is not relational database. Some JPA features does not work with bigtable such as aggregation queries, Join queries,  owned many-to-many relationships. BTW, GAE supports JDO 2.3 while only support JPA 1.0. I will recommend JDO if GAE is your target cloud platform. </p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/4953905" title="short permalink to this answer" class="short-link" id="link-post-4953905">share</a><span class="lsep">|</span><a href="/posts/4953905/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-02-10 06:03:15Z" class="relativetime">Feb 10 '11 at 6:03</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/610896/surge"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/e7d2eaad0c7f9e80aaae4b3e714b9472?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/610896/surge">surge</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">81</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4953905" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4953905" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="11485131"></a>
+<div id="answer-11485131" class="answer" data-answerid="11485131"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="11485131">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>In race between JDO vs JPA I can only agree with the datanucleus posters.</p>
+
+<p>First of all, and also most importantly, the posters of datanucleus know what they are doing. They are after all developing a persistent library and are familiar with data models other than the relational, e.g. Big Table.  I am sure that id a developer for hibernate were here, he would have say: "all our assumptions when building our core libraries are tightly coupled to relational model, hibernate is not optimized for GAE".</p>
+
+<p>Secondly, JPA is unquestionably in more widespread use, being a part of the official Java EE stack helps a bit, but that does not necessarily mean that it is better. 
+In fact, JDO, if you read about it, corresponds to a higher level of abstraction than JPA. JPA is tightly coupled to the RDBMS data model.  </p>
+
+<p>From a programming stand point, using the JDO APIs is a much better option, because you are conceptually compromising a lot less. You can switch, theoretically to any data model of your desire, provided the provider you use supports the underlying database. 
+(In practice you rarely achieve such a high level of transparancy, because you will find yourself setting your primary keys on GAE's object and you will be tying yourself to a specific database provider, e.g. google). it will still be easier to migrate though.</p>
+
+<p>Thirdly, you can use Hibernate, Eclipse Link, and even spring with GAE. Google seems to have made a big effort to allow you to use the frameworks you are used to building your applications on. But what people realize when they build their GAE applications as if they were running on RDBMS is that they are slow. Spring on GAE is SLOW. You can google Google IO videos on this topic to see that it is true.</p>
+
+<p>Also, adhering to standards is a good sensible thing to do, in principle I applaud. On the other hand, JPA being part of the Java EE stack makes people, at times, lose their notion of options. 
+Realize, if you will, that Java Server Faces is also part of the Java EE stack. And it is an unbelievably tidy solution for web GUI development. But in the end, why do people, the smarter people if I may say so, deviate from this standard and use GWT instead?</p>
+
+<p>In all of this, I have to sate that there is one very significant thing going for JPA. That is Guice and its convenient support for JPA. Seems that google was not as smart as usual in this point and are content, for now in not supporting JDO. I still think that they can afford it, and eventually Guice will engulf JDO as well,... or maybe not. </p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/11485131" title="short permalink to this answer" class="short-link" id="link-post-11485131">share</a><span class="lsep">|</span><a href="/posts/11485131/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/11485131/revisions" title="show all edits to this post">edited <span title="2013-12-22 15:54:47Z" class="relativetime">Dec 22 '13 at 15:54</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/383414/richard-le-mesurier"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/a0252c97758708e419523490aa848ded?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/383414/richard-le-mesurier">Richard Le Mesurier</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 12,507" dir="ltr">12.5k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="68 silver badges"><span class="badge2"></span><span class="badgecount">68</span></span><span title="139 bronze badges"><span class="badge3"></span><span class="badgecount">139</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-07-14 15:48:55Z" class="relativetime">Jul 14 '12 at 15:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/171956/99sono"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/94fb33143c0ba792a073fa7163ce9072?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/171956/99sono">99Sono</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">487</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-11485131" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-11485131" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="3251635"></a>
+<div id="answer-3251635" class="answer" data-answerid="3251635"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3251635">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Go JDO. Even if you don't have experience in it, it is not hard to pick up, and you will have a new skill under your belt!</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/3251635" title="short permalink to this answer" class="short-link" id="link-post-3251635">share</a><span class="lsep">|</span><a href="/posts/3251635/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-07-15 00:33:48Z" class="relativetime">Jul 15 '10 at 0:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/150172/corydoras"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/1ea682c16ec026cc78e795ab17758599?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/150172/corydoras">corydoras</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,653</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="37 silver badges"><span class="badge2"></span><span class="badgecount">37</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3251635" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3251635" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="14568943"></a>
+<div id="answer-14568943" class="answer" data-answerid="14568943"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14568943">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>What I think is terrible about using <code>JDO</code> at the time of writing this is that the only implementation vendor is <code>Datanucleus</code> and the drawbacks of that is the lack of competition which leads to numerous issues like:</p>
+
+<ol>
+<li>A not very detailed documentation about some aspects like <code>extensions</code></li>
+<li>You usually get sarcastic responses from the authors like (Have you checked the logs ? May be there is a reason for having them) and annoying responses like that</li>
+<li>You don't get an answer to your question in a helpful amount of time, sometimes if you get an answer in less than 7 days, you should consider your self lucky, even here on <code>StackOverflow</code></li>
+</ol>
+
+<p>I'm always hoping for someone to start implementing the <code>JDO</code> specification themselves, may be then they'll offer something more and hopefully more <strong>free</strong> attention to the community and not always bothering about being paid for support, not saying that <code>Datanucleus</code> authors only care about commercial support, but I'm just saying.</p>
+
+<p>I personally consider <code>Datanucleus</code> authors has no obligation whatsoever to <code>Datanucleus</code> itself nor it's community. They can drop the whole project at anytime and no one can judge them for it, it's their effort and their own property. But you should know what you are getting into. You see, when one of us developers look for a framework to use, you cannot punish or command the framework's author, but on the other hand, you need your work done ! If you had time to write that framework, why would you look for one in the first place ?!</p>
+
+<p>On the other hand, <code>JDO</code> itself has some complications like objects life cycle and stuff which isn't very intuitive and common (I think).</p>
+
+<p>Edit: Now I know also <code>JPA</code> enforces the object life cycle mechanism, so it looks like its inevitable to deal with persisted entities life cycle states if you wish to use a standard ORM API (i.e. <code>JPA</code> or <code>JDO</code>) </p>
+
+<p>What I like most about <code>JDO</code> is the ability to work with ANY database management system without considerable effort.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/14568943" title="short permalink to this answer" class="short-link" id="link-post-14568943">share</a><span class="lsep">|</span><a href="/posts/14568943/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/14568943/revisions" title="show all edits to this post">edited <span title="2014-04-08 17:26:37Z" class="relativetime">Apr 8 '14 at 17:26</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-01-28 18:46:02Z" class="relativetime">Jan 28 '13 at 18:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/897041/muhammad-gelbana"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/2dae49f2024ab831211b6f4eea3bb5a3?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/897041/muhammad-gelbana">Muhammad Gelbana</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,589</span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="41 bronze badges"><span class="badge3"></span><span class="badgecount">41</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14568943" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14568943" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="3514341"></a>
+<div id="answer-3514341" class="answer" data-answerid="3514341"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3514341">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>GAE/J is slated to add MYSQL before the end of the year.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/3514341" title="short permalink to this answer" class="short-link" id="link-post-3514341">share</a><span class="lsep">|</span><a href="/posts/3514341/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/3514341/revisions" title="show all edits to this post">edited <span title="2011-09-27 01:29:06Z" class="relativetime">Sep 27 '11 at 1:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/142162/tim-cooper"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/F5xn2.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/142162/tim-cooper">Tim Cooper</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 80,112" dir="ltr">80.1k</span><span title="20 gold badges"><span class="badge1"></span><span class="badgecount">20</span></span><span title="154 silver badges"><span class="badge2"></span><span class="badgecount">154</span></span><span title="174 bronze badges"><span class="badge3"></span><span class="badgecount">174</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-08-18 16:30:36Z" class="relativetime">Aug 18 '10 at 16:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/121678/stanlick"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/00c3936a097877809e65ffb26ae13510?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/121678/stanlick">stanlick</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">400</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3514341" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3674208" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Do you have a source for this?</span>
+                    &ndash;&nbsp;<a href="/users/105744/taylor-leese"
+                       title="25,012 reputation"
+                       class="comment-user">Taylor Leese</a>
+                <span class="comment-date" dir="ltr"><span title="2010-08-18 16:55:05Z" class="relativetime-clean">Aug 18 '10 at 16:55</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3801852" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Downvoted because I don&#39;t think this is true, can&#39;t find any info online to support it, and there&#39;s no evidence provided with the post.</span>
+                    &ndash;&nbsp;<a href="/users/28038/steve-armstrong"
+                       title="2,188 reputation"
+                       class="comment-user">Steve Armstrong</a>
+                <span class="comment-date" dir="ltr"><span title="2010-09-01 15:26:36Z" class="relativetime-clean">Sep 1 '10 at 15:26</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3946139" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The roadmap mentions a full featured SQL database is in the works <a href="http://code.google.com/appengine/business/roadmap.html" rel="nofollow">code.google.com/appengine/business/roadmap.html</a></span>
+                    &ndash;&nbsp;<a href="/users/177784/ashwin-prabhu"
+                       title="5,428 reputation"
+                       class="comment-user">Ashwin Prabhu</a>
+                <span class="comment-date" dir="ltr"><span title="2010-09-17 12:56:06Z" class="relativetime-clean">Sep 17 '10 at 12:56</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8742900" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Funny but now (31-08-2011) we found that it was not true at all.</span>
+                    &ndash;&nbsp;<a href="/users/202705/magallanes"
+                       title="1,981 reputation"
+                       class="comment-user">magallanes</a>
+                <span class="comment-date" dir="ltr"><span title="2011-08-31 23:36:02Z" class="relativetime-clean">Aug 31 '11 at 23:36</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-9128529" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Not true? Google&#39;s App Engine SQL Preview (beta) URL is pretty long, so I&#39;ve shortened it <a href="http://goo.gl/AhsxX" rel="nofollow">goo.gl/AhsxX</a> (thought the need to explain just in case you&#39;re a non-believer).</span>
+                    &ndash;&nbsp;<a href="/users/304330/big-rich"
+                       title="2,913 reputation"
+                       class="comment-user">Big Rich</a>
+                <span class="comment-date" dir="ltr"><span title="2011-09-23 20:46:00Z" class="relativetime-clean">Sep 23 '11 at 20:46</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3514341" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="2979808"></a>
+<div id="answer-2979808" class="answer" data-answerid="2979808"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2979808">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>JPA is the way to go as it seems to be pushed as a standardized API and has recently got momentum in EJB3.0.. JDO seems to have lost the steam.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/2979808" title="short permalink to this answer" class="short-link" id="link-post-2979808">share</a><span class="lsep">|</span><a href="/posts/2979808/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-06-05 09:30:46Z" class="relativetime">Jun 5 '10 at 9:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/359112/prateek-mathur"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/d824525d1edacc587b8d132fcea7624f?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/359112/prateek-mathur">prateek mathur</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">19</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2979808" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2979808" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="17479284"></a>
+<div id="answer-17479284" class="answer" data-answerid="17479284"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17479284">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Neither!</p>
+
+<p>Use Objectify, because is cheaper (use less resources) and is faster.
+FYI: <a href="http://paulonjava.blogspot.mx/2010/12/tuning-google-appengine.html" rel="nofollow">http://paulonjava.blogspot.mx/2010/12/tuning-google-appengine.html</a></p>
+
+<blockquote>
+  <p>Objectify is a Java data access API specifically designed for the
+  Google App Engine datastore. It occupies a "middle ground"; easier to
+  use and more transparent than JDO or JPA, but significantly more
+  convenient than the Low-Level API. Objectify is designed to make
+  novices immediately productive yet also expose the full power of the
+  GAE datastore.</p>
+</blockquote>
+
+<p>Objectify lets you persist, retrieve, delete, and query your own typed objects.</p>
+
+<pre><code>@Entity
+class Car {
+    @Id String vin; // Can be Long, long, or String
+    String color;
+}
+
+ofy().save().entity(new Car("123123", "red")).now();
+Car c = ofy().load().type(Car.class).id("123123").now();
+ofy().delete().entity(c);
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/17479284" title="short permalink to this answer" class="short-link" id="link-post-17479284">share</a><span class="lsep">|</span><a href="/posts/17479284/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-07-04 23:37:27Z" class="relativetime">Jul 4 '13 at 23:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/980442/daniel-de-le%c3%b3n"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/O6GeW.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/980442/daniel-de-le%c3%b3n">Daniel De Le&#243;n</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,718</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="38 silver badges"><span class="badge2"></span><span class="badgecount">38</span></span><span title="44 bronze badges"><span class="badge3"></span><span class="badgecount">44</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17479284" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0"
+                       data-canpost="false"
+                       data-cansee="true"
+                       data-comments-unavailable="false"
+                       data-addlink-disabled="true">
+
+
+
+    <tr id="comment-44411422" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">is this for datastore only? how about cloud sql?</span>
+                    &ndash;&nbsp;<a href="/users/926460/timeless"
+                       title="1,372 reputation"
+                       class="comment-user">Timeless</a>
+                <span class="comment-date" dir="ltr"><span title="2015-01-18 16:36:30Z" class="relativetime-clean">Jan 18 '15 at 16:36</span></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-47024401" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">And the downside is you become tightly tied to the vendor. Not always a problem but the whole point of JDO is to avoid that. (talking as the one who is probably gonna use it for small services).</span>
+                    &ndash;&nbsp;<a href="/users/553941/pijusn"
+                       title="3,784 reputation"
+                       class="comment-user">Pijusn</a>
+                <span class="comment-date" dir="ltr"><span title="2015-04-03 05:48:33Z" class="relativetime-clean">Apr 3 '15 at 5:48</span></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17479284" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+				    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/177800/jarrod-roberson">Jarrod Roberson</a> <span dir="ltr"><span title="2013-02-16 10:38:47Z" class="relativetime">Feb 16 '13 at 10:38</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site.
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?							Browse other questions tagged <a href="/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="/questions/tagged/google-app-engine" class="post-tag" title="show questions tagged &#39;google-app-engine&#39;" rel="tag"><img src="//i.stack.imgur.com/vobok.png" height="16" width="18" alt="" class="sponsor-tag-img">google-app-engine</a> <a href="/questions/tagged/jpa" class="post-tag" title="show questions tagged &#39;jpa&#39;" rel="tag">jpa</a> <a href="/questions/tagged/jdo" class="post-tag" title="show questions tagged &#39;jdo&#39;" rel="tag">jdo</a>  or <a href="/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-09-13 16:57:37Z"><b>6 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>26047 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2014-04-08 17:26:37Z">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk200515832",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk200515832">
+            </div>
+        <div id="hireme">
+            <script>
+;"use strict";(function(n){function it(n,i,r){var u=t.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof i=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof i=="function"&&i(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});ft.appendChild(u)}function rt(n){var i=t.createElement("link");i.type="text/css";i.rel="stylesheet";i.href=n;et.appendChild(i)}function ct(){var n=i.StackExchange,t="options",r="user";return n&&n[t]&&n[t][r]&&n[t][r].accountId}function lt(n){var t,i;return n=ot(f.hash?f.hash.substr(1):"",n||{}),t=n.ac||n.accountId||ct(),t&&(n.ac=t),n.tags||(i=tt(),i.length>0&&(n.tags=i.join(";"))),n.host=f.host.replace(/\.internal$/,""),n}function at(n,t,i,u){var c=h(n);if(c===null)return function(){};var e=null,f=null,l=r(),a=function a(){g(c)?(s(e),u(!1,r()-l)):f=o(a,t)};return f=o(a,t),i!==undefined&&(e=o(function(){s(f);u(!0,r()-l)},i)),function(){s(f);s(e)}}function vt(n){var u=f.hash.indexOf("large=1")!==-1,e=y(),o=u||!e||n,s=o?1:2,h=a(["hireme","clc-sb"],v),t=[s+"="+h],r=a(["careers1","clc-tlb"],v),i;return r&&t.push("5="+r),i=a(["careers3","clc-mlb"],v),i&&t.push("6="+i),t.join("&")}function ut(n,t){var e=!!h("#careersadsdoublehigh"),s=k({},u,{zones:u.zones||vt(e)}),f=lt(s),o;n&&(f.azt=1);t&&(f.lw=t);typeof i.innerWidth=="number"&&(f.bw=i.innerWidth);b&&(f.ver=b);o=p()-(e+0);o>0&&(f.az="1");var c=st(f,["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm","jobview","cpview","ver","host","cp","az"]),a=w+"?"+c;l=r();it(a)}function yt(n){function h(){f.forEach(rt);e.forEach(function(n){return pt(n,t[n],s,o)});typeof i.clc_after_load=="function"&&i.clc_after_load()}var t=n.cr,u=n.h,f=n.st,e=Object.keys(t),o=l?r()-l:0,s="//"+u+"/ct";h()}function pt(n,t,i,r){var s=t.cl,c=t.cn,f=t.an,l=t.tr,o=(s||[]).join(" "),u=h("#"+n);u&&(o&&(u.className+=" "+o),u.innerHTML=c.replace("&pt=0","&pt="+(r||0)),u.onmousedown=function(n){for(var t=n.target,r,o,s;t.tagName!=="A"&&t!==u;)t=t.parentNode;t!==u&&(r=[],f&&r.push("an="+f),o=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),o.length>0&&o.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(e(t)+"="+e(n.value))}),r.push("tr="+l),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function wt(n){var i=t.createElement("a");return i.href=n,i.host}function bt(){var i,n;y()?(n=at("#sidebar "+c,20,i,ut),o(function(){var r=h(c),i;g(r)||(r.parentNode.removeChild(r),typeof n=="function"&&n(),i=t.createElement("img"),i.src="//"+wt(w)+"/to.gif",i.style.display="none",t.body.appendChild(i))},2e3)):ut()}var w=n.u,u=n.o,b=n.c,y,p;u=u||{};var k=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n},i=window,f=i.location,e=i.encodeURIComponent,d=i.decodeURIComponent,t=i.document,ft=t.body,et=t.getElementsByTagName("head")[0],o=i.setTimeout,s=i.clearTimeout,c="[id^=adzerk].everyonelovesstackoverflow",l=0,r=function(){return(new Date).getTime()},ot=function(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[d(i[0])]=d(i[1]),n},t||{})},st=function(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return e(t)+"="+e(n[t])}).join("&")},g=function(n){return n.innerHTML.replace(/\s+$/g,"")},nt=t.querySelectorAll.bind(t),h=t.querySelector.bind(t),ht=t.getElementById.bind(t),a=function(n,t){return n.filter(t)[0]},tt=function(){return[].map.call(nt(".post-taglist .post-tag"),function(n){return n.textContent})},v=function(n){return!!ht(n)};y=function(){return p()>0};p=function(){return nt(c).length};i.clc=k(window.clc||{},{init:yt,load:bt,ls:it,as:rt,tags:tt})}).call(null, {"c":"acb93e6","u":"//clc.stackoverflow.com/p.js"});"use strict";var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 270px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/Sites/stackoverflow/img/newsletter-ad.png?v=4');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+        <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b> In it, you&#39;ll get:</p>
+        <ul>
+            <li>The week&#39;s top questions and answers</li>
+            <li>Important community announcements</li>
+            <li>Questions that need answers</li>
+        </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter" /></div>
+    <p id="newsletter-preview-container">see an <a href="//stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href='http://stackexchange.com/legal/privacy-policy' target='_blank'>privacy policy</a> and <a href='http://stackexchange.com/legal/terms-of-service' target='_blank'>terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1" />
+    </div>
+</div>
+
+    </div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="/q/994624" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">34</div>
+	</a>
+	<a href="/questions/994624/java-appengine-jdo-or-jpa-how-to-choose" class="question-hyperlink">Java AppEngine: JDO or JPA, How to choose?</a>
+</div><div class="spacer">
+	<a href="/q/2249841" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="/questions/2249841/difference-between-jpa-and-jdo" class="question-hyperlink">Difference between JPA and JDO?</a>
+</div><div class="spacer">
+	<a href="/q/2230322" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="/questions/2230322/why-does-the-google-app-engine-documentation-emphasize-jdo-over-jpa" class="question-hyperlink">Why does the Google App Engine documentation emphasize JDO over JPA?</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer">
+<a href="/q/530215" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">154
+    </div>
+</a><a href="/questions/530215/hibernate-vs-jpa-vs-jdo-pros-and-cons-of-each" class="question-hyperlink">Hibernate vs JPA vs JDO - pros and cons of each?</a>
+</div>
+<div class="spacer">
+<a href="/q/1482570" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="/questions/1482570/updating-nested-objects-with-jdo-on-google-app-engine" class="question-hyperlink">updating &ldquo;nested&rdquo; objects with JDO on Google App Engine</a>
+</div>
+<div class="spacer">
+<a href="/q/1641697" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">9
+    </div>
+</a><a href="/questions/1641697/google-app-engine-jdo-and-equals-hashcode" class="question-hyperlink">Google App Engine, JDO, and equals/hashCode</a>
+</div>
+<div class="spacer">
+<a href="/q/2038799" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="/questions/2038799/adding-google-app-engine-support-and-keeping-standalone-support" class="question-hyperlink">Adding Google App Engine support and keeping standalone support</a>
+</div>
+<div class="spacer">
+<a href="/q/2230322" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">11
+    </div>
+</a><a href="/questions/2230322/why-does-the-google-app-engine-documentation-emphasize-jdo-over-jpa" class="question-hyperlink">Why does the Google App Engine documentation emphasize JDO over JPA?</a>
+</div>
+<div class="spacer">
+<a href="/q/2249841" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="/questions/2249841/difference-between-jpa-and-jdo" class="question-hyperlink">Difference between JPA and JDO?</a>
+</div>
+<div class="spacer">
+<a href="/q/2394999" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="/questions/2394999/java-jdo-problem-google-app-engine-what-after-persistencemanagerpm-close" class="question-hyperlink">Java JDO Problem (Google App Engine), What after (PersistenceManager)pm.close</a>
+</div>
+<div class="spacer">
+<a href="/q/8292380" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="/questions/8292380/jdo-unsupporteddatastorefeatureexception-on-google-app-engine" class="question-hyperlink">JDO UnsupportedDatastoreFeatureException on Google App Engine</a>
+</div>
+<div class="spacer">
+<a href="/q/15533425" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="/questions/15533425/portable-jdo-jpa-design-for-app-engine-datastore-and-relational-database" class="question-hyperlink">Portable JDO/JPA Design for App Engine Datastore and Relational Database</a>
+</div>
+<div class="spacer">
+<a href="/q/15878183" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="/questions/15878183/query-two-entities-in-google-app-engine-jdo" class="question-hyperlink">Query two entities in Google App Engine JDO</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="//stackexchange.com/questions?tab=hot" 
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/232716/what-does-this-wiring-schematic-symbol-mean" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does this wiring schematic symbol mean?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/37087457/difference-between-defining-typing-dict-and-dict" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Difference between defining typing.Dict and dict?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/31999/thing-that-does-not-dry-in-sunlight" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Thing that does not dry in sunlight
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/66364/my-boss-frequently-calls-me-outside-work-hours-how-should-i-deal-with-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My boss frequently calls me outside work hours. How should I deal with it?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/67865/us-passport-will-expire-while-im-in-grand-cayman" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    US Passport will expire while I&#39;m in Grand Cayman
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/127206/what-if-a-man-actually-stabbed-the-witchking-instead-of-eowyn" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What if a MAN actually stabbed the Witchking instead of Eowyn?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/89101/in-on-or-at-github" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    (In, On or At) GitHub?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/323671/turning-a-celebrity-into-a-non-person" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Turning a celebrity into a non-person?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1775325/finding-limit-without-using-limit" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Finding limit without using limit
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/317670/does-a-long-ban-make-sense" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does a `long` ban make sense?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/32155/easy-peasy-riddle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Easy peasy riddle
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/122507/tracing-the-location-of-a-mobile-ip" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tracing the location of a mobile IP
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/32075/an-unwanted-guest" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    An unwanted guest
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/127328/is-black-panther-debuting-in-captain-america-civil-war" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Black Panther debuting in Captain America: Civil War?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/127775/bubble-sort-algorithm-in-java" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Bubble sort algorithm in java
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/24829/my-son-is-being-hit-by-a-friend-and-we-need-to-discuss-the-situation-with-his-m" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My son is being hit by a friend, and we need to discuss the situation with his mom
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/238153/physical-meaning-of-the-lebesgue-measure" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Physical meaning of the Lebesgue measure
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/323906/what-does-trodie-mean" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does &quot;trodie&quot; mean?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="http://bicycles.stackexchange.com/questions/38712/can-i-use-26-electric-hub-wheels-on-a-vintage-road-bike" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I use 26&quot; electric hub wheels on a vintage road bike?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/63802/should-i-charge-my-children-interest-when-they-borrow-money" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I charge my children interest when they borrow money?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1774488/is-there-a-set-theory-in-which-the-reals-are-not-a-set-but-the-natural-numbers-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a set theory in which the reals are not a set but the natural numbers are?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="http://blender.stackexchange.com/questions/52154/creating-textures-for-sold-colour-models" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Creating Textures for Sold Colour Models
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ethereum" title="Ethereum Stack Exchange"></div><a href="http://ethereum.stackexchange.com/questions/3683/is-the-mist-wallet-stable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:642 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Mist Wallet stable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/32779/one-year-without-beef-saves-3432-trees" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    &quot;One year without beef saves 3432 trees&quot;
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/1418219" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/1418219/ivc/dea8');});
+</script>
+<noscript>
+    <div><img src="/posts/1418219/ivc/dea8" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="/tour">tour</a>
+                    <a href="/help">help</a>
+                    <a href="http://blog.stackoverflow.com?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com">chat</a>
+                    <a href="http://data.stackexchange.com">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tr>
+            <th colspan=3>
+                Technology
+            </th>
+            <th >
+                Life / Arts
+            </th>
+            <th >
+                Culture / Recreation
+            </th>
+            <th >
+                Science
+            </th>
+            <th >
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="//stackoverflow.com" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="//serverfault.com" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="//superuser.com" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="//webapps.stackexchange.com" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="//askubuntu.com" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="//webmasters.stackexchange.com" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="//gamedev.stackexchange.com" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="//tex.stackexchange.com" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="//programmers.stackexchange.com" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="//unix.stackexchange.com" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="//apple.stackexchange.com" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="//wordpress.stackexchange.com" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="//gis.stackexchange.com" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="//electronics.stackexchange.com" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="//android.stackexchange.com" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="//security.stackexchange.com" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="//dba.stackexchange.com" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="//drupal.stackexchange.com" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="//sharepoint.stackexchange.com" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="//ux.stackexchange.com" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="//mathematica.stackexchange.com" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="//salesforce.stackexchange.com" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="//expressionengine.stackexchange.com" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="//photo.stackexchange.com" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="//scifi.stackexchange.com" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="//graphicdesign.stackexchange.com" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="//movies.stackexchange.com" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="//cooking.stackexchange.com" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="//diy.stackexchange.com" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="//money.stackexchange.com" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="//academia.stackexchange.com" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="//english.stackexchange.com" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="//skeptics.stackexchange.com" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="//judaism.stackexchange.com" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="//travel.stackexchange.com" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="//christianity.stackexchange.com" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="//gaming.stackexchange.com" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="//bicycles.stackexchange.com" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="//rpg.stackexchange.com" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="//math.stackexchange.com" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="//stats.stackexchange.com" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="//cstheory.stackexchange.com" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="//physics.stackexchange.com" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="//mathoverflow.net" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="//chemistry.stackexchange.com" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="//biology.stackexchange.com" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="//stackapps.com" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="//meta.stackexchange.com" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="//area51.stackexchange.com" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="//careers.stackoverflow.com">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo &#169; 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.5.6.3551
+            </div>
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('java,google-app-engine,jpa,jdo');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|google-app-engine|jpa|jdo|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+        
+    
+    <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request" + "?id=1" + "&enc=telkom2" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582ECSaLdwqSpnKygj4CcoDtF5L4lge45cG0Z1BfwpABDtm5YKPL57Gg80V%2btTCgNRTOIHswu1o73E%2fft%2fYy0rz78CLI0mmla1TFCX4ZvFcRq4D3fpKon7C1dZc8NwHoT8vBWEEv5QQcqm0h1vZJppZ%2fr9danpEJWitDIHIxWZ7fdES23qlKSouTMHr%2b7%2bL3plKRTyZk9Jq8%2bqJUbBpKXTMDPX9nm2e8QaTEbK5GQ5ao2B5fnVoXXXOY2HUMg4Av7dS36gFJ4oepuZpKZvPYrgzvq8jPepCIaXF%2f%2f0lJrXgU2gk7SnGvpiS9wawXObJmIAstAaIW81M1BAQmTu8lG6Q%2f6qsQHWYnECCTv69cZ6McuJIwWvwHPwcFPwcxzVA%2f%2f0N6bfWHk8zVSI3W1Lx8xTV24cSp1jQFfZutMwNf%2bJ6N3IneWu6QKD89e7XBXmuRiooLPr8o3jWaASp3q1wXXTxkoblfKVXzTnx5KgRHaUTgtughjZQBQqUtP2a1zIVQtBXspesvhwP2E4PxMlYUifJ9XQGfyrKUatBQBZSVEhwkXzS7a3rY1lR7KCs71p6OPW0l%2fWtWJRlcpuYvaB49vdwWY%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+</html>

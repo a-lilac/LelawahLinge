@@ -22,7 +22,7 @@ public class MultiCrawlController {
 		int maxDepthOfCrawling = 5;
 		Integer maxPagesToFetch = null;
 		int politenessDelay = 0;
-		String userAgentString = "Kute Kering";
+		String userAgentString = "Urang Amor";
 		
 		CrawlConfig config1 = new CrawlConfig();
 		//CrawlConfig config2 = new CrawlConfig();

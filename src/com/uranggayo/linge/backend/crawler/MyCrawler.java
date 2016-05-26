@@ -55,15 +55,15 @@ public class MyCrawler extends WebCrawler{
 	public void visit(Page page){
 			
 		// content/news spesific variables
-		String author = null;
-		String topic;
-		String title;
-		String content = null; // variable ini butuh pengolahan lebih lanjut untuk data mining!
+		String author = "";
+		String topic = "";
+		String title = "";
+		String content = ""; // variable ini butuh pengolahan lebih lanjut untuk data mining!
 		HashMap <String, WebURL> imagesA = new HashMap<String, WebURL>();
 		HashMap <String, String> images = new HashMap<String, String>(); //for testing
-		String date = null;
-		String source;
-		String url;
+		String date = "";
+		String source = "";
+		String url ="";
 		
 		PrintWriter printWriter = null;
 		FileWriter fileWriter = null;
@@ -85,7 +85,7 @@ public class MyCrawler extends WebCrawler{
 			 * Percabangan ini digunakan untuk memparsing document html/ news dari situs Lintas Gayo
 			 */
 			if(url.contains("lintasgayo")){
-				file = crawlStorageFolder+"/lintasgayo/lintasgayo.txt";
+				file = crawlStorageFolder+"/lintasgayo/lintasgayo.csv";
 								
 				// Judul
 				if(title.endsWith("| Lintas Gayo") || title.endsWith("| Media Online Gayo")){
@@ -100,6 +100,7 @@ public class MyCrawler extends WebCrawler{
 				
 				// Isi berita
 				content = article.select("p").text().toString();
+				content.replace("\n", "||||");
 				
 				// TODO tanda tanya berlebihan pada konten.
 				//gambar pada berita
@@ -124,25 +125,39 @@ public class MyCrawler extends WebCrawler{
 			}
 			
 			// Data telah diolah, sekarang cetak dan simpan.
-			System.out.println(title);
+			
+			// urutan row pada datastore
+			// author, title, content, date, topic, images, source, url
 			System.out.println(author);
-			System.out.println(date);
-			System.out.println(url);
+			System.out.println(title);
 			System.out.println(content);
+			System.out.println(date);
+			System.out.println(topic);
 			System.out.println(images.toString());
+			System.out.println(source);
+			System.out.println(url);
 			System.out.println();
 			
 			try{
 				fileWriter  = new FileWriter(file, true); //true means appending enabled!!
 				printWriter = new PrintWriter(fileWriter);
 				
-				printWriter.println(title);
-				System.out.println(author);
-				printWriter.println(date);
-				printWriter.println(url);
-				printWriter.println(content);
-				System.out.println(images.toString());
-				printWriter.println();
+				// tulis ke file CSV
+				String splitter = "˛"; //Ogonek - U+02DB
+				
+				splitter = "¨" ;// Diaresis U+00A8
+				//ambil data
+				
+				// urutan row pada datastore
+				// author, title, content, date, topic, images, source, url
+				printWriter.print(author+splitter);
+				printWriter.print(title+splitter);
+				printWriter.print(content+splitter);
+				printWriter.print(date+splitter);
+				printWriter.print(topic+splitter);
+				printWriter.print(images.toString()+splitter);
+				printWriter.print(source+splitter);
+				printWriter.print(url);
 				printWriter.println();
 				
 			}catch(IOException ioe){
